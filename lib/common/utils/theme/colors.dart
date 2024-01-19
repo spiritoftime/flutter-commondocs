@@ -1,15 +1,15 @@
 // import { createTheme } from "@mui/material/styles";
 import 'package:flutter/material.dart';
 
-class LightTheme {
-  static const primaryColor = Color(0xfb1976d2);
-  static const secondaryColor = Color(0xfbe91e63);
+class AppColors {
+  static const blueColor = Color(0xfb1976d2);
+  static const blackColor = Color(0xfb0f0f0f);
   static const errorColor = Color(0xfbf44336);
   static const warningColor = Color(0xfbff9800);
   static const infoColor = Color(0xfb2196f3);
   static const successColor = Color(0xfb4caf50);
-  static const backgroundColor = Color(0xfbf5f5f5);
-  static const primaryTextColor = Color(0xfb1976d2);
+  static const whiteColor = Color(0xfbf5f5f5);
+  static const grayColor = Color(0xfb2c2c2c);
 }
 // const darkTheme = createTheme({
 //   typography: {

@@ -1,5 +1,6 @@
 import 'package:commondocs/common/widgets/height_spacer.dart';
 import 'package:commondocs/features/landing_page/widgets/feature.dart';
+import 'package:commondocs/common/utils/theme/colors.dart';
 import 'package:flutter/material.dart';
 
 class Features extends StatelessWidget {
@@ -7,7 +8,7 @@ class Features extends StatelessWidget {
     {
       'icon': const Icon(
         Icons.drag_indicator_outlined,
-        color: Colors.white,
+        color: AppColors.whiteColor,
       ),
       'title': 'Simplify.Organize.Collaborate',
       'description':
@@ -16,7 +17,7 @@ class Features extends StatelessWidget {
     {
       'icon': const Icon(
         Icons.share,
-        color: Colors.white,
+        color: AppColors.whiteColor,
       ),
       'title': 'Efficient Document Sharing',
       'description':
@@ -25,7 +26,7 @@ class Features extends StatelessWidget {
     {
       'icon': const Icon(
         Icons.security,
-        color: Colors.white,
+        color: AppColors.whiteColor,
       ),
       'title': 'Enhanced Security Features',
       'description':
