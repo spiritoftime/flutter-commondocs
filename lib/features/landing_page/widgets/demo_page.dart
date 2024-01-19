@@ -1,13 +1,21 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:commondocs/common/providers/light_mode_provider.dart';
+import 'package:commondocs/common/utils/theme/colors.dart';
 import 'package:commondocs/common/widgets/height_spacer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class DemoPage extends StatelessWidget {
+class DemoPage extends ConsumerWidget {
   const DemoPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    bool isLightMode = ref.watch(lightModeProvider);
+
     return Container(
+      decoration: BoxDecoration(
+        color: isLightMode ? AppColors.whiteColor : AppColors.blackColor,
+      ),
       padding: const EdgeInsets.all(32),
       width: MediaQuery.of(context).size.width,
       child: Column(children: [

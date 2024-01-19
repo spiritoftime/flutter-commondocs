@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   static const blueColor = Color(0xfb1976d2);
   static const blackColor = Color(0xfb0f0f0f);
+  static const lightBlack = Color(0xfb2c2c2c);
   static const errorColor = Color(0xfbf44336);
   static const warningColor = Color(0xfbff9800);
   static const infoColor = Color(0xfb2196f3);

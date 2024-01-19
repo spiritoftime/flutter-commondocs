@@ -1,22 +1,31 @@
+import 'package:commondocs/common/providers/light_mode_provider.dart';
+import 'package:commondocs/common/utils/theme/colors.dart';
 import 'package:commondocs/common/widgets/height_spacer.dart';
+import 'package:commondocs/common/widgets/rounded_button.dart';
 import 'package:commondocs/common/widgets/width_spacer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HeroPage extends StatelessWidget {
+class HeroPage extends ConsumerWidget {
   const HeroPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    bool isLightMode = ref.watch(lightModeProvider);
+
     return Container(
+      decoration: BoxDecoration(
+        color: isLightMode ? AppColors.whiteColor : AppColors.blackColor,
+      ),
       padding: const EdgeInsets.only(top: 32, left: 32, right: 32, bottom: 8),
       width: MediaQuery.of(context).size.width,
       child: Column(
         children: [
           RichText(
             textAlign: TextAlign.center,
-            text: const TextSpan(
+            text: TextSpan(
               text: 'Streamline\n Collaboration,\n',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 38,
                 fontWeight: FontWeight.bold,
                 color: Color(0xfb1976d2),
@@ -26,16 +35,20 @@ class HeroPage extends StatelessWidget {
                   text: 'Elevate productivity',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Color(0xfb0f0f0f),
+                    color: isLightMode
+                        ? AppColors.blackColor
+                        : AppColors.whiteColor,
                   ),
                 ),
               ],
             ),
           ),
           const HeightSpacer(24),
-          const Text(
+          Text(
               textAlign: TextAlign.center,
-              style: TextStyle(color: Color(0xfb4a4a4a)),
+              style: TextStyle(
+                  color:
+                      isLightMode ? AppColors.grayColor : AppColors.whiteColor),
               'Unleash seamless collaboration and productivity with CommonDocs. Empower your team to work together effortlessly and achieve more.'),
           const HeightSpacer(8),
           Padding(
@@ -43,45 +56,31 @@ class HeroPage extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    side: const BorderSide(
-                      color: Color(0xfb0f0f0f),
-                      width: 1,
-                    ),
-                    backgroundColor: const Color(0xfb0f0f0f),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32.0),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    'SIGN UP',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+                RoundedButton(
+                    onPressed: () {},
+                    borderColor: isLightMode
+                        ? AppColors.blackColor
+                        : AppColors.whiteColor,
+                    buttonText: 'SIGNUP',
+                    textColor: isLightMode
+                        ? AppColors.whiteColor
+                        : AppColors.blackColor,
+                    buttonColor: isLightMode
+                        ? AppColors.blackColor
+                        : AppColors.whiteColor),
                 const WidthSpacer(12),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    side: const BorderSide(
-                      color: Color(0xfb0f0f0f),
-                      width: 1,
-                    ),
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(32.0),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    'LEARN MORE',
-                    style: TextStyle(
-                      color: Color(0xfb0f0f0f),
-                    ),
-                  ),
-                ),
+                RoundedButton(
+                    onPressed: () {},
+                    borderColor: isLightMode
+                        ? AppColors.blackColor
+                        : AppColors.whiteColor,
+                    buttonText: 'LEARN MORE',
+                    textColor: isLightMode
+                        ? AppColors.grayColor
+                        : AppColors.whiteColor,
+                    buttonColor: isLightMode
+                        ? AppColors.whiteColor
+                        : AppColors.blackColor),
               ],
             ),
           ),
