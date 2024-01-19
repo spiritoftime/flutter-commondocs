@@ -1,9 +1,15 @@
 import 'package:commondocs/common/widgets/height_spacer.dart';
-import 'package:commondocs/common/widgets/width_spacer.dart';
 import 'package:flutter/material.dart';
 
 class Feature extends StatelessWidget {
-  const Feature({super.key});
+  final Icon featureIcon;
+  final String title;
+  final String description;
+  const Feature(
+      {super.key,
+      required this.featureIcon,
+      required this.title,
+      required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -23,26 +29,23 @@ class Feature extends StatelessWidget {
               color: const Color(0xfb0f0f0f),
             ),
             padding: const EdgeInsets.all(16),
-            child: const Icon(
-              Icons.drag_indicator_outlined,
-              color: Colors.white,
-            ),
+            child: featureIcon,
           ),
           const HeightSpacer(16),
-          const Text(
-            'Simplify.Organize.Collaborate',
+          Text(
+            title,
             textAlign: TextAlign.start,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 20,
               color: Color(0xfb0f0f0f),
             ),
           ),
           const HeightSpacer(16),
-          const Text(
-            'Effortlessly categorize your files using nested folders, allowing for easy management and quick access. Simplify your workflow by dragging and dropping documents with our intuitive interface.',
+          Text(
+            description,
             textAlign: TextAlign.start,
-          )
+          ),
         ],
       ),
     );

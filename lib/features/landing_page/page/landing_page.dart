@@ -6,11 +6,7 @@ import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {
   LandingPage({super.key});
-  final List<Widget> _pages = [
-    const HeroPage(),
-    const DemoPage(),
-    const Features()
-  ];
+  final List<Widget> _pages = [const HeroPage(), const DemoPage(), Features()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

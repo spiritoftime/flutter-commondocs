@@ -1,15 +1,62 @@
+import 'package:commondocs/common/widgets/height_spacer.dart';
 import 'package:commondocs/features/landing_page/widgets/feature.dart';
 import 'package:flutter/material.dart';
 
 class Features extends StatelessWidget {
-  const Features({super.key});
+  final List<Map<String, dynamic>> features = [
+    {
+      'icon': const Icon(
+        Icons.drag_indicator_outlined,
+        color: Colors.white,
+      ),
+      'title': 'Simplify.Organize.Collaborate',
+      'description':
+          'Effortlessly categorize your files using nested folders, allowing for easy management and quick access. Simplify your workflow by dragging and dropping documents with our intuitive interface.'
+    },
+    {
+      'icon': const Icon(
+        Icons.share,
+        color: Colors.white,
+      ),
+      'title': 'Efficient Document Sharing',
+      'description':
+          'Share documents effortlessly. CommonDocs enables easy sharing with specific individuals or groups, granting control over access permissions.'
+    },
+    {
+      'icon': const Icon(
+        Icons.security,
+        color: Colors.white,
+      ),
+      'title': 'Enhanced Security Features',
+      'description':
+          'Rest assured knowing your documents are safe. CommonDocs employs robust security measures, including refresh tokens and access controls.'
+    },
+  ];
+  Features({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(32.0),
-      child: Column(
-        children: [Feature()],
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      padding: const EdgeInsets.symmetric(horizontal: 32.0),
+      child: ListView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        itemCount: features.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Column(
+            children: [
+              Feature(
+                featureIcon: features[index]['icon'],
+                title: features[index]['title'],
+                description: features[index]['description'],
+              ),
+              const HeightSpacer(16)
+              // Adjust the height according to your needs
+            ],
+          );
+        },
       ),
     );
   }
