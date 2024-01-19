@@ -8,9 +8,8 @@ class HeroPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(32),
+      padding: const EdgeInsets.only(top: 32, left: 32, right: 32, bottom: 8),
       width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
       child: Column(
         children: [
           RichText(

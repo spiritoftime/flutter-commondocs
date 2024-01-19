@@ -1,10 +1,11 @@
 import 'package:commondocs/common/widgets/width_spacer.dart';
+import 'package:commondocs/features/landing_page/widgets/demo_page.dart';
 import 'package:commondocs/features/landing_page/widgets/hero_page.dart';
 import 'package:flutter/material.dart';
 
 class LandingPage extends StatelessWidget {
   LandingPage({super.key});
-  final List<Widget> _pages = [const HeroPage()];
+  final List<Widget> _pages = [const HeroPage(), const DemoPage()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
