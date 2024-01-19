@@ -25,9 +25,9 @@ class DemoPage extends StatelessWidget {
             'assets/document-showcase.png',
             width: MediaQuery.of(context).size.width,
           ),
-          Container(
-            width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.only(top: 55.0, left: 28.0),
+          Positioned(
+            top: 55.0,
+            left: 28.0,
             child: DefaultTextStyle(
               style: const TextStyle(
                   color: Color(0xfb1976d2),
