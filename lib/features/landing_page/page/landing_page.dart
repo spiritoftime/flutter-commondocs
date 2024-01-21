@@ -8,10 +8,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class LandingPage extends ConsumerWidget {
+  final demoPageKey = GlobalKey();
   LandingPage({super.key});
-  final List<Widget> _pages = [const HeroPage(), const DemoPage(), Features()];
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    Future<void> scrollToDemoPage() async {
+      await Scrollable.ensureVisible(
+        demoPageKey.currentContext!,
+        duration: const Duration(milliseconds: 500),
+      );
+    }
+
+    final List<Widget> pages = [
+      HeroPage(
+        scrollToDemoPage: scrollToDemoPage,
+      ),
+      DemoPage(demoPageKey),
+      Features()
+    ];
     bool isLightMode = ref.watch(lightModeProvider);
     return Scaffold(
       body: CustomScrollView(
@@ -86,8 +101,8 @@ class LandingPage extends ConsumerWidget {
           ),
           SliverList(
             delegate: SliverChildBuilderDelegate((builder, index) {
-              return _pages[index];
-            }, childCount: _pages.length),
+              return pages[index];
+            }, childCount: pages.length),
           ),
         ],
       ),

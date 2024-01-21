@@ -7,7 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class HeroPage extends ConsumerWidget {
-  const HeroPage({super.key});
+  final Function() scrollToDemoPage;
+  const HeroPage({
+    super.key,
+    required this.scrollToDemoPage,
+  });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -70,7 +74,7 @@ class HeroPage extends ConsumerWidget {
                         : AppColors.whiteColor),
                 const WidthSpacer(12),
                 RoundedButton(
-                    onPressed: () {},
+                    onPressed: scrollToDemoPage,
                     borderColor: isLightMode
                         ? AppColors.blackColor
                         : AppColors.whiteColor,

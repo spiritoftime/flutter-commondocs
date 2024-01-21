@@ -6,13 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class DemoPage extends ConsumerWidget {
-  const DemoPage({super.key});
+  final GlobalKey scrollKey;
+  const DemoPage(this.scrollKey, {super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     bool isLightMode = ref.watch(lightModeProvider);
 
     return Container(
+      key: scrollKey,
       decoration: BoxDecoration(
         color: isLightMode ? AppColors.whiteColor : AppColors.blackColor,
       ),

@@ -35,11 +35,11 @@ class Features extends ConsumerWidget {
     bool isLightMode = ref.watch(lightModeProvider);
     return Container(
       color: isLightMode ? AppColors.whiteColor : AppColors.blackColor,
-      height: MediaQuery.of(context).size.height,
       padding: const EdgeInsets.symmetric(horizontal: 32.0),
       child: ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
         itemCount: features.length,
+        shrinkWrap: true,
         itemBuilder: (BuildContext context, int index) {
           return Column(
             children: [
