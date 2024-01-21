@@ -11,6 +11,7 @@ class AppColors {
   static const successColor = Color(0xfb4caf50);
   static const whiteColor = Color(0xfbf5f5f5);
   static const grayColor = Color(0xfb2c2c2c);
+  static const pinkColor = Color(0xfbf48fb1);
 }
 // const darkTheme = createTheme({
 //   typography: {

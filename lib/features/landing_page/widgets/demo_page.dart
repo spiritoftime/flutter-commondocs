@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:commondocs/common/providers/light_mode_provider.dart';
-import 'package:commondocs/common/utils/theme/colors.dart';
+import 'package:commondocs/common/utils/colors.dart';
 import 'package:commondocs/common/widgets/height_spacer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

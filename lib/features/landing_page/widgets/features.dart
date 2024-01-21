@@ -1,7 +1,7 @@
 import 'package:commondocs/common/providers/light_mode_provider.dart';
 import 'package:commondocs/common/widgets/height_spacer.dart';
 import 'package:commondocs/features/landing_page/widgets/feature.dart';
-import 'package:commondocs/common/utils/theme/colors.dart';
+import 'package:commondocs/common/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

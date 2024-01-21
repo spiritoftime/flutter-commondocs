@@ -1,5 +1,5 @@
 import 'package:commondocs/common/providers/light_mode_provider.dart';
-import 'package:commondocs/common/utils/theme/colors.dart';
+import 'package:commondocs/common/utils/colors.dart';
 import 'package:commondocs/common/widgets/height_spacer.dart';
 import 'package:commondocs/common/widgets/rounded_button.dart';
 import 'package:commondocs/common/widgets/width_spacer.dart';
